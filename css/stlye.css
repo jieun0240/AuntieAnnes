@@ -1,0 +1,75 @@
+* {
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&display=swap');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 390px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #BDBDBD;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #EEEEEE;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cart i {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5A5A5A;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    max-width: 390px;
+    width: 100%;
+    height: 65px;
+    background-color: #fff;
+    align-items: center;
+}
+
+.home i, .map i, .list i, .user i {
+    font-size: 26px;
+    color: #BDBDBD;
+}
+
+header i:hover, footer i:hover {
+    font-weight: bold;
+    color: #005AD5;
+}
+
+.order {
+    width: 74px;
+    height: 74px;
+    border-radius: 100px;
+    border: 7px solid #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-20px);
+    background-color: #fff;
+}
