@@ -70,7 +70,7 @@ main::-webkit-scrollbar {
 
 .menu-item div {
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -129,4 +129,17 @@ button {
 .category-bar button:hover {
     color: #005AD5;
     font-weight: 550;
+}
+
+/* 클릭한 버튼에서 호버 효과를 멈추게 하기 위한 클래스 */
+.category-bar button.clicked {
+    background-color: #005AD5; /* 클릭 상태 배경 색상 */
+    transform: none; /* 클릭 상태에서는 변형을 없앰 */
+    color: white; /* 텍스트 색상 */
+}
+
+/* 클릭한 버튼은 호버 효과를 막기 위해 호버 스타일을 제거 */
+.category-bar button.clicked:hover {
+    background-color: #005AD5; /* 클릭 시 상태 유지 */
+    transform: none; /* 호버 효과 비활성화 */
 }

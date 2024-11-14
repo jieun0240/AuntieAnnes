@@ -51,3 +51,18 @@ const filterCategory = (category) => {
 document.addEventListener("DOMContentLoaded", () => {
     fetchData(); // JSON 파일에서 데이터 불러오기
 });
+
+// 버튼 클릭 시 호버 효과를 비활성화하는 함수
+document.querySelectorAll('.category-bar button').forEach(button => {
+    button.addEventListener('click', function() {
+        // 클릭한 버튼에 'clicked' 클래스 추가
+        this.classList.add('clicked');
+        
+        // 다른 버튼들의 'clicked' 클래스는 제거
+        document.querySelectorAll('.category-bar button').forEach(b => {
+            if (b !== this) {
+                b.classList.remove('clicked');
+            }
+        });
+    });
+});
