@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="icon" href="/img/tapIcon.jpg">
     <link rel="stylesheet" href="/css/stlye.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>AuntieAnne's</title>
 </head>
 
@@ -20,6 +21,44 @@
             <div class="cart"><a href="/html/"><i class="bi bi-bag"></i></a></div>
         </header>
 
+        <main>
+            <div class="scroll-container">
+                <img src="/img/스크롤이미지-1.jpg" alt="">
+                <img src="/img/스크롤이미지-2.jpg" alt="">
+                <img src="/img/스크롤이미지-3.jpg" alt="">
+            </div>
+
+            <div class="title">주문방식</div>
+            <div class="order-container">
+                <div class="order-item">
+                    <i class="bi bi-shop"></i>
+                    <div class="order-text">매장주문</div>
+                </div>
+                <div class="order-item">
+                    <i class="bi bi-box"></i>
+                    <div class="order-text">포장주문</div>
+                </div>
+            </div>
+
+            <div class="title">메뉴</div> <!-- 메뉴 제목 -->
+
+            <div class="category-bar">
+                <button onclick="filterCategory('all')">전체</button>
+                <button onclick="filterCategory('프레즐')">프레즐</button>
+                <button onclick="filterCategory('스틱')">스틱</button>
+                <button onclick="filterCategory('핫도그')">핫도그</button>
+                <button onclick="filterCategory('딥')">딥</button>
+                <button onclick="filterCategory('에이드')">에이드</button>
+                <button onclick="filterCategory('커피')">커피</button>
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-items">
+                    <!-- menu-item들이 동적으로 삽입됩니다 -->
+                </div>
+            </div>
+        </main>
+
         <footer>
             <div class="home"><a href="/html/main.html"><i class="bi bi-house-door"></i></a></div>
             <div class="map"><a href="/html/storeSelection.html"><i class="bi bi-geo-alt"></i></a></div>
@@ -28,6 +67,8 @@
             <div class="user"><a href="/user"><i class="bi bi-person"></i></a></div>
         </footer>
     </div>
+
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,132 @@
+main {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+/* 스크롤바 숨기기 */
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto; /* 가로 스크롤 가능 */
+    scroll-snap-type: x mandatory; /* 스크롤 스냅 설정 */
+    /* gap: 10px; 이미지 사이 간격 */
+    /* padding: 10px; */
+}
+
+.scroll-container img {
+    flex-shrink: 0; /* 이미지가 줄어들지 않도록 설정 */
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* 이미지가 잘리지 않도록 커버 설정 */
+    scroll-snap-align: start; /* 스냅 시작 위치 설정 */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 고정 */
+    gap: 15px;
+    row-gap: 30px;
+    justify-items: center;
+    /* max-height: 300px; 최대 높이 제한 */
+    margin-bottom: 150px;
+    padding-bottom: 170px; /* 푸터 높이만큼 아래쪽 여백 추가 */
+}
+
+/* 스크롤바 숨기기
+.menu-container::-webkit-scrollbar {
+    display: none;
+} */
+
+.menu-item {
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    background-color: #ffffff;
+    margin-top: 5px;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu-item div {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.order-item, .title, .menu-container, .category-bar {
+    margin: 12px 20px 5px 20px;
+}
+
+.order-container {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center; /* 전체 order-container 가운데 정렬 */
+    align-items: center;
+}
+
+.order-item {
+    display: flex;
+    flex-direction: column; /* i와 div를 위아래로 배치 */
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    width: 193px;
+    height: 117px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #afafaf;
+}
+
+.order-item i {
+    font-size: 30px;
+}
+
+.order-item div {
+    font-weight: 550;
+}
+
+.order-item:hover {
+    color: #005AD5;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+.category-bar {
+    border-bottom: 1px solid #afafaf;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-bar button {
+    font-size: 15px; /* 글자 크기 */
+}
+
+.category-bar button:hover {
+    color: #005AD5;
+    font-weight: 550;
+}
