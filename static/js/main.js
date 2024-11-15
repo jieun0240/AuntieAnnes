@@ -8,7 +8,7 @@ const showData = (data) => {
     data.forEach(element => {
         let articleString = `
             <div class="menu-item">
-                <img src="../img/${element.img}" alt="${element.name}">
+                <img src="../static/img/${element.img}" alt="${element.name}">
                 <div class="name">${element.name}</div>
             </div>`;
         productContainerString += articleString;
@@ -29,7 +29,7 @@ const setData = (data) => {
 
 // JSON 파일을 불러와 데이터를 설정하는 함수
 const fetchData = () => {
-    fetch('../js/menu.json')
+    fetch('/static/js/menu.json')
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error('Error loading JSON data:', error));
