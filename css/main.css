@@ -41,6 +41,7 @@ main::-webkit-scrollbar {
     gap: 15px;
     row-gap: 30px;
     justify-items: center;
+    align-items: center;
     /* max-height: 300px; 최대 높이 제한 */
     margin-bottom: 150px;
     padding-bottom: 170px; /* 푸터 높이만큼 아래쪽 여백 추가 */
@@ -56,10 +57,10 @@ main::-webkit-scrollbar {
     height: 170px;
     border-radius: 10px;
     /* overflow: hidden; */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
     background-color: #ffffff;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .menu-item img {
@@ -71,7 +72,8 @@ main::-webkit-scrollbar {
 .menu-item div {
     text-align: center;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
+    color: #4D4D4D;
 }
 
 .order-item, .title, .menu-container, .category-bar {
@@ -94,7 +96,7 @@ main::-webkit-scrollbar {
     height: 117px;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     color: #afafaf;
 }
@@ -108,7 +110,8 @@ main::-webkit-scrollbar {
 }
 
 .order-item:hover {
-    color: #005AD5;
+    background-color: #005AD5;
+    color: #ffffff;
 }
 
 button {
@@ -117,13 +120,17 @@ button {
 }
 
 .category-bar {
-    border-bottom: 1px solid #afafaf;
+    background-color: #ffffff;
+    padding: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
 }
 
 .category-bar button {
     font-size: 15px; /* 글자 크기 */
+    color: #afafaf;
 }
 
 .category-bar button:hover {
@@ -134,12 +141,15 @@ button {
 /* 클릭한 버튼에서 호버 효과를 멈추게 하기 위한 클래스 */
 .category-bar button.clicked {
     background-color: #005AD5; /* 클릭 상태 배경 색상 */
+    border-radius: 10px;
+    font-weight: 550;
     transform: none; /* 클릭 상태에서는 변형을 없앰 */
     color: white; /* 텍스트 색상 */
 }
 
 /* 클릭한 버튼은 호버 효과를 막기 위해 호버 스타일을 제거 */
 .category-bar button.clicked:hover {
+    border-radius: 10px;
     background-color: #005AD5; /* 클릭 시 상태 유지 */
     transform: none; /* 호버 효과 비활성화 */
 }

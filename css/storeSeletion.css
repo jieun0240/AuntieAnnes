@@ -1,0 +1,75 @@
+main {
+    margin: 20px;
+}
+
+.title-container {
+    padding: 15%;
+    margin-bottom: 6%;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #005AD5;
+    text-align: center;
+}
+
+select {
+    appearance: none; /* 브라우저 기본 스타일 제거 */
+    -webkit-appearance: none; /* 사파리 브라우저 기본 스타일 제거 */
+    -moz-appearance: none; /* 파이어폭스 기본 스타일 제거 */
+    background: none; /* 배경 제거 */
+    border: none; /* 테두리 제거 */
+    padding: 0; /* 여백 제거 */
+    font-family: inherit; /* 폰트 상속 */
+    font-size: inherit; /* 폰트 크기 상속 */
+    color: inherit; /* 텍스트 색상 상속 */
+    cursor: pointer; /* 클릭 가능한 커서 */
+}
+
+option {
+    appearance: none; /* 브라우저 기본 스타일 제거 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+select {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    color: #005AD5;
+    outline-color: #FDB913;
+}
+
+.selection-store {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #005AD5;
+    color: #fff;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 20px;
+}
+
+input[type="radio"] {
+    accent-color: #FDB913; /* 원하는 색상으로 라디오 버튼 스타일링 */
+}
+
+.store-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+}

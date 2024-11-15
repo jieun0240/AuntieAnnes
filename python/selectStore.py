@@ -5,7 +5,7 @@ app = Flask(__name__)
 # 홈 페이지 (네비게이션과 함께 기본 레이아웃 제공)
 @app.route('/')
 def home():
-    return render_template('map.html')
+    # return render_template('map.html')
 
 # 매장 검색 API 엔드포인트 (추후 Naver API 등과 연동 가능)
 @app.route('/search', methods=['POST'])
