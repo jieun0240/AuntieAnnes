@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="icon" href="/static/img/tapIcon.jpg">
-    <link rel="stylesheet" href="/static/css/stlye.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/login.css">
     <title>AuntieAnne's</title>
 </head>
-
 <body>
     <div class="container">
         <div class="signup-container">
             <h1>회원가입</h1>
-            <form action="#" method="post">
+            <form action="/signup" method="post">
                 <div class="input-group">
                     <label for="email">이메일</label>
                     <input type="email" name="email" id="email" required>
@@ -30,7 +26,8 @@
                 </div>
                 <button type="submit" class="signup-button">회원가입</button>
             </form>
-            <a href="/">로그인으로 돌아가기</a>
+            <a href="/login">로그인으로 돌아가기</a>
         </div>
     </div>
 </body>
+</html>
