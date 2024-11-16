@@ -20,7 +20,7 @@ with app.app_context():
     db.create_all()
 
 # 로그인 페이지
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/python/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -32,12 +32,12 @@ def login():
             return redirect(url_for('main'))  # 로그인 성공 시 main 페이지로 이동
         else:
             flash('이메일 또는 비밀번호가 잘못되었습니다.', 'error')  # 로그인 실패 시 오류 메시지
-            return render_template('login.html')
+            return render_template('html/login.html')
 
-    return render_template('login.html')
+    return render_template('html/login.html')
 
 # 회원가입 페이지 (추가 가능)
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/python/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
         email = request.form['email']
@@ -60,7 +60,7 @@ def signup():
 # 메인 페이지 (샘플)
 @app.route('/main')
 def main():
-    return "안녕하세요! 로그인에 성공했습니다."
+    return render_template('html/main.html', message="안녕하세요! 로그인에 성공했습니다.")
 
 if __name__ == '__main__':
     app.run(debug=True)

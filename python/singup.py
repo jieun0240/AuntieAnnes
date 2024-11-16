@@ -1,4 +1,20 @@
-# 회원가입 페이지 (추가 가능)
+from flask import Flask, request, flash, redirect, url_for, render_template
+from werkzeug.security import generate_password_hash
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # session 및 flash 메시지를 위해 secret key가 필요합니다.
+
+# DB 설정
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+db = SQLAlchemy(app)
+
+# 모델 정의 (User 모델 예시)
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(200), nullable=False)
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -25,3 +41,6 @@ def signup():
         return redirect(url_for('login'))
 
     return render_template('html/signup.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
