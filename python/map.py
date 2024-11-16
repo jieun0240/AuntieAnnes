@@ -27,7 +27,7 @@ regions = {
 # HTML 페이지 렌더링
 @app.route("/")
 def store_selection():
-    return render_template("html/storeSelection.html")
+    return render_template('html/storeSelection.html')
 
 # 지역 데이터 API
 @app.route("/api/regions")

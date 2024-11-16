@@ -29,10 +29,10 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user and check_password_hash(user.password, password):
             flash('로그인 성공!', 'success')
-            return redirect(url_for('main'))  # 메인 페이지로 이동
+            return redirect(url_for('main'))  # 로그인 성공 시 main 페이지로 이동
         else:
-            flash('이메일 또는 비밀번호가 잘못되었습니다.', 'error')
-            return render_template('login.html', error='이메일 또는 비밀번호가 잘못되었습니다.')
+            flash('이메일 또는 비밀번호가 잘못되었습니다.', 'error')  # 로그인 실패 시 오류 메시지
+            return render_template('login.html')
 
     return render_template('login.html')
 
