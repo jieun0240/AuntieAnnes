@@ -22,7 +22,18 @@
         </header>
 
         <main>
-            
+            <div class="title">{{ user.name }}님 환영합니다!</div>
+            <section class="account-info">
+                <h2>계정 정보</h2>
+                <ul>
+                    <li><strong>이름:</strong> {{ user.name }}</li>
+                    <li><strong>이메일:</strong> {{ user.email }}</li>
+                    <li><strong>회원 등급:</strong> {{ user.level }}</li>
+                </ul>
+            </section>
+            <div class="account-actions">
+                <a href="/logout"><button>로그아웃</button></a>
+            </div>
         </main>
 
         <footer>
@@ -34,6 +45,7 @@
         </footer>
     </div>
 
+    <script src="/static/js/user.js"></script>
 </body>
 
 </html>

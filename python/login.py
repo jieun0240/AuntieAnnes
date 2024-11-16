@@ -1,28 +1,48 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
+app.secret_key = "secret_key"  # 세션을 위한 비밀 키
 
-# 라우트 설정
-@app.route('/')
+# 더미 데이터 (실제로는 데이터베이스를 사용)
+users = {
+    "jieun@example.com": {
+        "name": "김지은",
+        "password": "password123",
+        "level": "Silver"
+    }
+}
+
+# 로그인 페이지
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template('/html/login.html')  # 로그인 페이지 렌더링
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        
+        user = users.get(email)
+        if user and user["password"] == password:
+            session["user"] = {
+                "name": user["name"],
+                "email": email,
+                "level": user["level"]
+            }
+            return redirect(url_for("user_page"))
+        else:
+            return render_template("login.html", error="이메일 또는 비밀번호가 잘못되었습니다.")
+    return render_template("/html/login.html")
 
-@app.route('/signup')
-def signup():
-    return render_template('signup.html')  # 회원가입 페이지 렌더링
+# 회원 페이지
+@app.route("/user")
+def user_page():
+    if "user" not in session:
+        return redirect(url_for("login"))
+    return render_template("user.html", user=session["user"])
 
-@app.route('/main', methods=['POST'])
-def main():
-    # 사용자가 제출한 로그인 데이터를 처리
-    email = request.form.get('email')
-    password = request.form.get('password')
+# 로그아웃
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return redirect(url_for("login"))
 
-    # 간단한 로그인 검증 (실제 검증은 데이터베이스에서 수행)
-    if email == 'admin@example.com' and password == '1234':
-        return render_template('main.html')  # 성공 시 메인 페이지 렌더링
-    else:
-        return '<h1>로그인 실패. 이메일과 비밀번호를 확인하세요!</h1>'  # 실패 시 메시지 표시
-
-# 애플리케이션 실행
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

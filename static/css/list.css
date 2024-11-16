@@ -1,3 +1,22 @@
-.container {
-    
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 85%;
+    background-color: #f4f4f9;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+i {
+    font-size: 60px;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+.next {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
 }
