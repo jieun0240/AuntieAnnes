@@ -1,0 +1,153 @@
+main {
+    max-height: 100vh;
+    margin: 20px;
+    overflow-y: auto;
+}
+
+/* 스크롤바 숨기기 */
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.category-bar button {
+    border: 0;
+    background-color: transparent;
+}
+
+.category-bar {
+    background-color: #ffffff;
+    padding: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-bar button {
+    font-size: 15px; /* 글자 크기 */
+    color: #afafaf;
+}
+
+.category-bar button:hover {
+    color: #005AD5;
+    font-weight: 550;
+}
+
+/* 클릭한 버튼에서 호버 효과를 멈추게 하기 위한 클래스 */
+.category-bar button.clicked {
+    background-color: #005AD5; /* 클릭 상태 배경 색상 */
+    border-radius: 10px;
+    font-weight: 550;
+    transform: none; /* 클릭 상태에서는 변형을 없앰 */
+    color: white; /* 텍스트 색상 */
+}
+
+/* 클릭한 버튼은 호버 효과를 막기 위해 호버 스타일을 제거 */
+.category-bar button.clicked:hover {
+    border-radius: 10px;
+    background-color: #005AD5; /* 클릭 시 상태 유지 */
+    transform: none; /* 호버 효과 비활성화 */
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #005AD5;
+    text-align: center;
+}
+
+.check-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+input[type="radio"] {
+    accent-color: #FDB913; /* 원하는 색상으로 라디오 버튼 스타일링 */
+}
+
+/* 전체 메뉴 컨테이너 */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 반응형 열 크기 */
+    gap: 20px; /* 항목 간격 */
+    justify-items: center;
+    /* padding: 20px; */
+    margin-top: 20px;
+    margin-bottom: 150px; /* 푸터 높이만큼 아래쪽 여백 */
+}
+
+/* 각 메뉴 항목 */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 140px; /* 그리드 셀에 맞게 자동 조정 */
+    /* max-width: 180px; 최대 크기 설정 */
+    height: 240px; /* 고정된 높이 */
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+/* 이미지 스타일 */
+.menu-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* 이름 스타일 */
+.menu-item .name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* 카운트 컨테이너 */
+.count-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0;
+    margin-top: auto; /* 버튼이 항상 하단에 위치하도록 */
+}
+
+/* 카운트 버튼 */
+.count-container button {
+    width: 40px;
+    height: 40px;
+    background-color: #007BFF; /* 버튼 색상 */
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* 버튼 hover 효과 */
+.count-container button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* 버튼 확대 효과 */
+}
+
+/* 숫자 표시 */
+.count-container .number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    width: 40px;
+    line-height: 40px;
+}

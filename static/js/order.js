@@ -10,6 +10,11 @@ const showData = (data) => {
             <div class="menu-item">
                 <img src="/static/img/${element.img}" alt="${element.name}">
                 <div class="name">${element.name}</div>
+                <div class="count-container">
+                    <button class="increase">+</button>
+                    <div class="number">0</div>
+                    <button class="decrease">-</button>
+                </div>
             </div>`;
         productContainerString += articleString;
     });
@@ -18,7 +23,33 @@ const showData = (data) => {
     const productContainerDiv = document.querySelector(".menu-container");
     if (productContainerDiv) {
         productContainerDiv.innerHTML = productContainerString;
+
+        // 메뉴 항목별로 이벤트 리스너 추가
+        attachEventListeners();
     }
+};
+
+// 메뉴 항목별 이벤트 리스너 추가 함수
+const attachEventListeners = () => {
+    document.querySelectorAll('.menu-item').forEach(item => {
+        const numberElement = item.querySelector('.number');
+        const increaseButton = item.querySelector('.increase');
+        const decreaseButton = item.querySelector('.decrease');
+
+        // 증가 버튼 클릭 이벤트
+        increaseButton.addEventListener('click', () => {
+            const current = parseInt(numberElement.innerHTML, 10);
+            numberElement.innerHTML = current + 1;
+        });
+
+        // 감소 버튼 클릭 이벤트
+        decreaseButton.addEventListener('click', () => {
+            const current = parseInt(numberElement.innerHTML, 10);
+            if (current > 0) { // 0 이하로 내려가지 않도록 제한
+                numberElement.innerHTML = current - 1;
+            }
+        });
+    });
 };
 
 // 데이터를 설정하는 함수 (초기 데이터를 보관)
@@ -54,10 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 버튼 클릭 시 호버 효과를 비활성화하는 함수
 document.querySelectorAll('.category-bar button').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         // 클릭한 버튼에 'clicked' 클래스 추가
         this.classList.add('clicked');
-        
+
         // 다른 버튼들의 'clicked' 클래스는 제거
         document.querySelectorAll('.category-bar button').forEach(b => {
             if (b !== this) {

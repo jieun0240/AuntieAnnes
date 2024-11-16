@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // JSON 파일에서 지역 데이터 불러오기
     let regions = {};
     
-    fetch('/js/store.json') // JSON 파일 경로
+    fetch('/static/js/store.json') // JSON 파일 경로
         .then(response => response.json())
         .then(data => {
             regions = data;
