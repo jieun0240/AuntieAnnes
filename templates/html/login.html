@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="icon" href="/static/img/tapIcon.jpg">
-    <link rel="stylesheet" href="/static/css/stlye.css">
-    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/tapIcon.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stlye.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <title>AuntieAnne's</title>
 </head>
 
@@ -15,9 +15,9 @@
     <div class="container">
         <div class="login-container">
             <div class="logo">
-                <img src="/static/img/icon-img.svg" alt="로고">
+                <img src="{{ url_for('static', filename='img/icon-img.svg') }}" alt="로고">
             </div>
-            <form class="login-form" method="POST" action="/login">
+            <form class="login-form" action="{{ url_for('login') }}" method="POST">
                 <div class="input-group">
                     <label for="email">이메일</label>
                     <input type="email" id="email" name="email" placeholder="example@domain.com" required>
@@ -27,14 +27,20 @@
                     <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
                 </div>
                 <button type="submit" class="login-button">로그인</button>
-                {% if error %}
-                    <p class="error">{{ error }}</p>
-                {% endif %}
+                <!-- 플래시 메시지 표시 -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="flash-message">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 <div class="extra-links">
-                    <a href="/templates/html/singup.html">회원가입</a>
+                    <a href="{{ url_for('signup') }}">회원가입</a>
                     <a href="#">비밀번호 찾기</a>
                 </div>
             </form>
         </div>
     </div>
 </body>
+</html>

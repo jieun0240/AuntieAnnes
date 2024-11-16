@@ -44,12 +44,11 @@
         </main>
 
         <footer>
-            <div class="home"><a href="/templates/html/main.html"><i class="bi bi-house-door"></i></a></div>
-            <div class="map"><a href="/templates/html/storeSelection.html"><i class="bi bi-geo-alt"></i></a></div>
-            <div class="order"><a href="/templates/html/order.html"><img src="/static/img/order-img.svg" alt=""></a>
-            </div>
-            <div class="list"><a href="/templates/html/list.html"><i class="bi bi-list"></i></a></div>
-            <div class="user"><a href="/templates/html/user.html"><i class="bi bi-person"></i></a></div>
+            <div class="home"><a href="{{ url_for('main') }}"><i class="bi bi-house-door"></i></a></div>
+            <div class="map"><a href="{{ url_for('store_selection') }}"><i class="bi bi-geo-alt"></i></a></div>
+            <div class="order"><a href="{{ url_for('order') }}"><img src="/static/img/order-img.svg" alt=""></a></div>
+            <div class="list"><a href="{{ url_for('list') }}"><i class="bi bi-list"></i></a></div>
+            <div class="user"><a href="{{ url_for('user') }}"><i class="bi bi-person"></i></a></div>
         </footer>
     </div>
 
