@@ -74,7 +74,8 @@ input[type="radio"] {
     justify-items: center;
     /* padding: 20px; */
     margin-top: 20px;
-    margin-bottom: 150px; /* 푸터 높이만큼 아래쪽 여백 */
+    margin-bottom: 20px;
+    margin-bottom: 170px;
 }
 
 /* 각 메뉴 항목 */
@@ -109,7 +110,7 @@ input[type="radio"] {
     font-weight: bold;
     color: #333333;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 /* 카운트 컨테이너 */
@@ -150,4 +151,30 @@ input[type="radio"] {
     text-align: center;
     width: 40px;
     line-height: 40px;
+}
+
+.order-button-container {
+    position: fixed;
+    bottom: 80px; /* 푸터 위에 고정되도록 설정 */
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 10; /* 버튼이 다른 요소 위에 표시되도록 설정 */
+    display: flex;
+    justify-content: end;
+}
+
+#order-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+#order-button:hover {
+    background-color: #005AD5;
 }

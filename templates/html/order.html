@@ -23,6 +23,7 @@
 
         <main>
             <div class="title">메뉴주문하기</div>
+            
             <div class="check-container">
                 <div class="check-box-store">
                     <input type="radio" name="order-type" id="store" value="매장"><label for="store">매장</label>
@@ -31,6 +32,7 @@
                     <input type="radio" name="order-type" id="wrap" value="포장"><label for="wrap">포장</label>
                 </div>
             </div>
+
             <div class="category-bar">
                 <button onclick="filterCategory('all')">All</button>
                 <button onclick="filterCategory('프레즐')">프레즐</button>
@@ -40,7 +42,12 @@
                 <button onclick="filterCategory('에이드')">에이드</button>
                 <button onclick="filterCategory('커피')">커피</button>
             </div>
+
             <div class="menu-container"></div>
+
+            <div class="order-button-container">
+                <button id="order-button"><i class="bi bi-bag-plus"></i></button>
+            </div>
         </main>
 
         <footer>

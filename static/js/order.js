@@ -97,3 +97,12 @@ document.querySelectorAll('.category-bar button').forEach(button => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const orderButton = document.getElementById("order-button");
+    if (orderButton) {
+        orderButton.addEventListener("click", () => {
+            alert("주문을 완료하셨습니다!");
+        });
+    }
+});
